@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+
+{% block head-js %}
+    <script src="/static/plugins/ckeditor/ckeditor.js"></script>
+{% endblock %}
+
+{% block content %}
+{#   <div class="col-md-5 left-content-panel">#}
+    <div class="new-article">
+    {% if new_article_obj %}
+        <h3>文章<{{ new_article_obj.title }}>已发布，<a href="{% url 'article_detail' new_article_obj.id %}">点我查看</a></h3>
+    {% else %}
+          <br>
+           <br>
+
+           <div>
+            <form action="{% url 'new_article' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <input name="title" type="text" class="form-control" placeholder="文章标题"/>
+            <br>
+
+                <span>板块:</span>
+
+                <select name="categroy_id" class="form-control">
+                {% for catrgory in category_list %}
+                        <option value="{{ catrgory.id }}">{{ catrgory.name }}</option>
+                {% endfor %}
+
+                </select>
+            <br>
+
+                <input name="summary" type="text" class="form-control" placeholder="一句话概括文章" />
+            <br>
+
+                必选文章标题图片<input type="file" name="head_img" />
+            <br>
+
+                <textarea id="ck-editor" name="content" class="form-control" rows="3"></textarea>
+            <br>
+                <button type="submit" class="btn btn-success pull-right">发贴</button>
+            </form>
+            </div>
+    {% endif %}
+   <br>
+   <br>
+   </div>
+
+{% endblock %}
+
+
+{% block bottom-js %}
+    <script>
+         CKEDITOR.replace( 'ck-editor' );
+         CKEDITOR.editorConfig = function( config ) {
+{#            config.language = 'es';#}
+            config.uiColor = '#F7B42C';
+            config.height = 500;
+            config.toolbarCanCollapse = true;
+};
+    </script>
+{% endblock %}

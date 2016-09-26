@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block encodqution %}
+<!-- saved from url=(0054)http://v3.bootcss.com/examples/navbar-fixed-top/#about -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://v3.bootcss.com/favicon.ico">
+{% endblock %}
+
+
+{% load comment_tags %}
+
+
+{% block content %}
+{#    <div class="row">#}
+{#    <div >#}
+        <div class="article_detail">
+            <br>
+
+            <h4 style="">{{ article_obj.title }}</h4>
+
+            <br>
+
+            <p>{{ article_obj.content | safe }}</p>
+            <hr/>
+            <span>评论: </span>
+            <br>
+            {% comment_tree_tag article_obj.comment_set.select_related %}
+
+        <br>
+        </div>
+{#    </div>#}
+
+{% endblock %}

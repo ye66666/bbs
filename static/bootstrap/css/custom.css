@@ -1,0 +1,66 @@
+
+.left-content-panel{
+
+    border: 2px  solid crimson;
+}
+.right-sidebar{
+
+    border: 2px  solid black;
+}
+.article-head-img{
+}
+.article-box {
+    margin-bottom: 20px;
+}
+.article-head-img img{
+    height: 125px;
+    width: 220px;
+}
+.article-summary{
+    margin-left: 35px;
+}
+
+.comment-node{
+    /*border: 1px dashed rgba(94, 93, 97, 0.45);*/
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #e8a57a;
+    margin-bottom: 10px;
+}
+
+.chat-container{
+    height: 600px;
+    border: 1px solid;
+}
+
+.contact-list{
+    height: 600px;
+    border: 1px cornflowerblue;
+}
+
+.chat-box{
+    height: 600px;
+    border: 1px #1d75b3;
+}
+
+.chat-header{
+    background-color: #139ff7;
+    height: 25px;
+}
+
+.chat-content{
+    border: 1px solid lightgreen;
+    height: 290px;
+    overflow: auto;
+}
+.chat-msg-sendbox{
+    height: 73px;
+    /*background-color: #50D4FD;*/
+}
+
+.msg-box textarea{
+    height: 72px;
+    width: 100%;
+    resize: none;
+    border: none;
+}

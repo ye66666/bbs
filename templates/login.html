@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="col-md-5 left-content-panel">
+        <form class="form-signin" action="{% url 'login' %}" method="post">{% csrf_token %}
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <input type="text" name="username" class="form-control" placeholder="username" required="" autofocus="">
+            <br>
+            <input type="password" name="password" class="form-control" placeholder="Password" required="">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><br>
+            <p style="color: red">{{ err_msg }}</p>
+        </form>
+    </div>
+
+      <div class="col-md-5 left-content-panel">
+        <form class="form-signin" action="{% url 'login' %}" method="post">{% csrf_token %}
+            <h2 class="form-signin-heading">regite your user</h2>
+            <input type="text" name="username" class="form-control" placeholder="username" required="" autofocus="">
+            <br>
+            <input type="password" name="password" class="form-control" placeholder="Password" required="">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button><br>
+            <p style="color: red">{{ err_msg }}</p>
+        </form>
+    </div>
+
+
+{% endblock %}
